@@ -1,3 +1,5 @@
+# Tutorial by Kenny Yip Coding!
+
 ## TO DO
 # Have X and O be different colors
 # Change font

@@ -8,7 +8,7 @@
 import tkinter
 
 def set_tile(row, column):
-    global curr_player
+    global curr_player, curr_color
 
     if game_over:
         return
@@ -94,8 +94,9 @@ board = [[0, 0, 0],
          [0, 0, 0], 
          [0, 0, 0]]
 
-color_blue = "#4584b6"
-color_yellow = "#ffde57"
+color_blue = "#006fc9"
+#color_purple = "#8e02bd"
+color_yellow = "#26ee29"
 color_gray = "#343434"
 color_light_gray = "#646464"
 
@@ -103,25 +104,23 @@ turns = 0
 game_over = False
 
 #window setup
-
 window = tkinter.Tk()
 window.title("Tic Tac Toe")
 window.resizable(False, False)
 
 frame = tkinter.Frame(window)
-label = tkinter.Label(frame, text=curr_player + "'s turn", font= ("Consolas",20), background=color_gray, 
-                      foreground="white")
+label = tkinter.Label(frame, text=curr_player + "'s turn", font= ("Forma DJR Deck Bold",20), background=color_gray, foreground="white")
 
 # tells the user whose turn it is
 label.grid(row=0, column=0, columnspan=3, sticky="we")
 
 for row in range(3):
     for column in range(3):
-        board[row][column] = tkinter.Button(frame, text="", font=("Consolas", 50, "bold"), background=color_gray, foreground=color_blue, width=4, height=1,
+        board[row][column] = tkinter.Button(frame, text="", font=("Forma DJR Deck Bold", 50, "bold"), background=color_gray, foreground=color_blue, width=4, height=1,
                                                                   command=lambda row=row, column=column: set_tile(row, column))
         board[row][column].grid(row=row+1, column=column)
 
-button = tkinter.Button(frame, text="restart", font=("Consolas", 20), background=color_gray, 
+button = tkinter.Button(frame, text="restart", font=("Forma DJR Deck Bold", 20), background=color_gray, 
                         foreground="white", command=new_game)
 
 #restart button
